@@ -30,6 +30,10 @@ const Container = styled.footer`
   bottom: 0;
   background: #2C2C2E;
   box-shadow: -11px -10px 51px rgba(0, 0, 0, 0.25), 0px 0px 26px rgba(0, 0, 0, 0.53), inset 4px 4px 27px rgba(137, 137, 137, 0.33);
+  @media (max-width: 320px) {
+    flex-flow: column-reverse;
+    height: 221px;
+  }
 `;
 
 const List = styled.ul`
@@ -59,20 +63,31 @@ const ListItem = styled.li`
 
 const LeftBlock = styled.div`
   padding: 20px;
+  @media (max-width: 320px) {
+    padding: 16px;
+  }
 
 `;
 const MiddleBlock = styled.div`
   padding: 20px 40px;
+  @media (max-width: 320px) {
+    display: none;
+  }
 
 `;
 const RightBlock = styled.div`
   padding: 20px;
-
+  @media (max-width: 320px) {
+    padding: 0 16px;
+  }
 `;
 const Text = styled.p`
   font-size: 16px;
   line-height: 19px;
   color: #1EAB5F;
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 const LogoText = styled.div`
@@ -88,6 +103,11 @@ const LogoText = styled.div`
 
   span {
     margin-left: 20px;
+  }
+  @media (max-width: 320px) {
+    margin: 0;
+    font-size: 12px;
+
   }
 `;
 
@@ -121,9 +141,13 @@ const Doc = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 const Select = styled.div`
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -138,6 +162,12 @@ const Select = styled.div`
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+  @media (max-width: 320px) {
+    font-size: 12px;
+    width: 288px;
+    height: 34px;
+    margin:16px 0;
+  }
 `;
 export const Footer = () => {
     return (

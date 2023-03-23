@@ -8,6 +8,9 @@ const Container = styled.ul`
   width: 84%;
   padding: 0;
   margin: 27px 0 0;
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 const MenuItem = styled.li`
   display: flex;

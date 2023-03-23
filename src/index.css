@@ -18,6 +18,13 @@ code {
   height: 150px !important;
 
 }
+
 .control-dots {
   bottom: -5px !important;
+}
+
+@media (max-width: 320px) {
+  .carousel-root {
+    display: none;
+  }
 }

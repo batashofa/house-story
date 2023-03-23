@@ -20,6 +20,10 @@ const Container = styled.header`
   background: #2C2C2E;
   padding: 40px;
   box-shadow: -11px -10px 51px rgba(0, 0, 0, 0.25), 0px 0px 26px rgba(0, 0, 0, 0.53);
+  @media (max-width: 320px) {
+    height: 60px;
+    padding: 0 16px;
+  }
 `;
 
 const Hat = styled.div`
@@ -31,10 +35,13 @@ const Hat = styled.div`
   width: 100%;
 `;
 
+const StyledLogo = styled(Logo)`
+  @media (max-width: 320px) {
+    width: 100px;
+  }
+`;
+
 const Contacts = styled.ul`
-  display: flex;
-  flex-flow: column;
-  align-items: center;
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
@@ -44,6 +51,11 @@ const Contacts = styled.ul`
   margin: 0;
   padding-left: 40px;
   letter-spacing: 0px;
+  @media (max-width: 320px) {
+    font-size: 12px;
+    padding-left: 0;
+    display: block;
+  }
 `;
 
 const SocialMedia = styled.ul`
@@ -60,23 +72,29 @@ const SocialMedia = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 const StyledPhone = styled(Phone)`
-  position: absolute;
-  top: 0;
-  left: 12px;
+ 
+  @media (max-width: 320px) {
+    width: 14px;
+    height: 14px;
+  }
 `;
 
 const StyledPoint = styled(Point)`
-  position: absolute;
-  bottom: 0;
-  left: 15px;
+  @media (max-width: 320px) {
+    width: 8px;
+    height: 8px;
+  }
 `;
 
 const StyledHamburger = styled(Hamburger)`
   position: relative;
- 
+
 `;
 
 const StyledFacebookLogo = styled.div`
@@ -89,9 +107,15 @@ const StyledFacebookLogo = styled.div`
 `;
 
 const Number = styled.li`
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @media (max-width: 320px) {
+    font-size: 12px;
+    gap: 2px;
+
+    margin: 0 0 -7px 0;
+  }
 `;
 
 
@@ -101,6 +125,12 @@ const Text = styled.li`
   font-size: 16px;
   line-height: 19px;
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 
 const EntryButton = styled.button`
@@ -120,6 +150,9 @@ const EntryButton = styled.button`
   line-height: 10px;
   color: #FFFFFF;
   letter-spacing: 1.1px;
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 const Links = styled.div`
@@ -133,12 +166,12 @@ export const Header = () => {
     return (
         <Container>
             <Hat>
-                <Logo/>
+                <StyledLogo/>
                 <Contacts>
-                    <StyledPhone/>
-                    <Number>+34 624 36 23 26</Number>
-                    <StyledPoint/>
-                    <Text>Звоните, мы онлайн</Text>
+
+                    <Number><StyledPhone/>+34 624 36 23 26</Number>
+
+                    <Text><StyledPoint/>Звоните, мы онлайн</Text>
                 </Contacts>
                 <SocialMedia>
                     <Links>
@@ -148,8 +181,8 @@ export const Header = () => {
                         <StyledFacebookLogo><FacebookLogo/></StyledFacebookLogo>
                         <Email/>
                     </Links>
-                    <StyledPoint/>
-                    <Text>Пишите, мы онлайн</Text>
+
+                    <Text><StyledPoint/>Пишите, мы онлайн</Text>
                 </SocialMedia>
                 <EntryButton>
                     Записаться на экскурсию
