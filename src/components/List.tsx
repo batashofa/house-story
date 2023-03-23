@@ -33,13 +33,12 @@ const Text = styled.span`
 const Ul = styled.div`
   display: flex;
   flex-flow: column;
-  gap: 20px;
-
+  gap: 16px;
 `;
+
 const Li = styled.div`
   display: flex;
   align-items: center;
-
 `;
 
 

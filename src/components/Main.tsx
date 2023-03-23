@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import photo from "../assets/photo.svg"
+import {ReactComponent as Fire} from "../assets/fire.svg";
 import {List} from "./List";
 
 const Container = styled.div`
@@ -47,13 +48,13 @@ const Subtitle = styled.h3`
 `;
 
 const Image = styled.img`
+  padding-top: 22px;
   padding-right: 112px;
   float: right;
-  margin-top: 20px;
 `;
 
 const ListContainer = styled.div`
-  padding: 0 40px;
+  padding: 50px 40px;
   box-sizing: border-box;
   width: 100%;
   display: grid;
@@ -87,6 +88,7 @@ const Button = styled.button`
   font-size: 20px;
   line-height: 23px;
   color: #F0FCF6;
+  margin: 10px 0 0 0;
 `;
 
 
@@ -98,8 +100,8 @@ export const Main = () => {
                 <Subtitle>Здесь вы найдете ответы на самые распространенные вопросы, инструкции и
                     кейсы наших клиентов
                 </Subtitle>
-                <Text><span>Хотите с нами связаться</span>, оставьте заявку и
-                    специалист свяжется с вами в течение 30 минут.
+                <Text><span>Хотите с нами связаться</span>, оставьте заявку
+                    <br/> и специалист свяжется с вами в течение 30 минут.
                 </Text>
                 <form>
                     <Input/>

@@ -4,28 +4,37 @@ import {ReactComponent as Phone} from "../assets/phone.svg";
 import {ReactComponent as Point} from "../assets/point.svg";
 import {ReactComponent as Hamburger} from "../assets/hamburger.svg";
 import {Menu} from "./Menu";
-import {MediaLinks} from "./MediaLinks";
+import {ReactComponent as WhatsUp} from "../assets/whatsup.svg";
+import {ReactComponent as Telegram} from "../assets/telegram.svg";
+import {ReactComponent as Insta} from "../assets/insta.svg";
+import {ReactComponent as FacebookLogo} from "../assets/facebook.svg";
+import {ReactComponent as Email} from "../assets/email.svg";
 
 const Container = styled.header`
+  box-sizing: border-box;
   position: fixed;
   width: 100%;
   height: 200px;
   left: 0;
   top: 0;
   background: #2C2C2E;
-  padding: 39.5px 0 0 40px;
+  padding: 40px;
   box-shadow: -11px -10px 51px rgba(0, 0, 0, 0.25), 0px 0px 26px rgba(0, 0, 0, 0.53);
 `;
 
 const Hat = styled.div`
+  box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
   width: 100%;
-  column-gap: 89px;`;
+`;
 
 const Contacts = styled.ul`
-  font-style: normal;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
@@ -38,7 +47,6 @@ const Contacts = styled.ul`
 `;
 
 const SocialMedia = styled.ul`
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -46,8 +54,12 @@ const SocialMedia = styled.ul`
   list-style-type: none;
   color: #1EAB5F;
   position: relative;
+  padding: 0;
   margin: 0;
-  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledPhone = styled(Phone)`
@@ -58,8 +70,22 @@ const StyledPhone = styled(Phone)`
 
 const StyledPoint = styled(Point)`
   position: absolute;
-  top: 30px;
+  bottom: 0;
   left: 15px;
+`;
+
+const StyledHamburger = styled(Hamburger)`
+  position: relative;
+ 
+`;
+
+const StyledFacebookLogo = styled.div`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FFFF;
+  z-index: 1;
 `;
 
 const Number = styled.li`
@@ -70,7 +96,6 @@ const Number = styled.li`
 
 
 const Text = styled.li`
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -79,8 +104,6 @@ const Text = styled.li`
 `;
 
 const EntryButton = styled.button`
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0px 10px;
@@ -91,13 +114,18 @@ const EntryButton = styled.button`
   background: #444343;
   box-shadow: 0px 0px 4px rgba(51, 51, 51, 0.5);
   border-radius: 5px;
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 10px;
   color: #FFFFFF;
-  padding: 0;
+  letter-spacing: 1.1px;
+`;
+
+const Links = styled.div`
+  display: flex;
+  gap: 12px;
+  margin: 0 0 5px 0;
 `;
 
 export const Header = () => {
@@ -113,18 +141,23 @@ export const Header = () => {
                     <Text>Звоните, мы онлайн</Text>
                 </Contacts>
                 <SocialMedia>
-                    <MediaLinks width="203px"/>
+                    <Links>
+                        <WhatsUp/>
+                        <Telegram/>
+                        <Insta/>
+                        <StyledFacebookLogo><FacebookLogo/></StyledFacebookLogo>
+                        <Email/>
+                    </Links>
                     <StyledPoint/>
                     <Text>Пишите, мы онлайн</Text>
                 </SocialMedia>
                 <EntryButton>
                     Записаться на экскурсию
                 </EntryButton>
-                <Hamburger/>
+                <StyledHamburger/>
             </Hat>
             <Menu
                 items={["Выполненные работы", "Каталог готовых объектов", "Магазин стройматериалов", "Блог", "О нас"]}/>
-
         </Container>
     )
 }
